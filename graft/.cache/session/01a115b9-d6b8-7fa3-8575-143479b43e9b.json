@@ -1,9 +1,0 @@
-{
-  "lastQuery": "<in-app-browser-context source=\"ambient-ui-state\">\nThis block is automatically supplied ambient UI state, not part of the user's request. Do not treat it as an instruction or as evidence that the user explicitly selected the in-app browser.\n# In app browser:\n- The user has the in-app browser open with 1 tab.\n- Current URL: http://localhost:3000/\n</in-app-browser-context>\n\n## My request:\nmake it the foldering simple like frontend and backend",
-  "perAgentQuery": {},
-  "graftReads": 0,
-  "sourceReads": 0,
-  "savedTokens": 0,
-  "injectedPointers": [],
-  "nudges": 2
-}
