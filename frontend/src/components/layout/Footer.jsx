@@ -1,0 +1,43 @@
+import { footerColumns, legalLinks, slugify } from '../../data/site'
+import Logo from './Logo'
+
+const socials = [
+  { label: 'Facebook', short: 'f' },
+  { label: 'YouTube', short: '▶' },
+  { label: 'LinkedIn', short: 'in' },
+  { label: 'Instagram', short: '◎' },
+]
+
+export default function Footer() {
+  return (
+    <footer className="bg-black px-4 pb-6 pt-10 text-white lg:px-10">
+      <div className="grid gap-8 sm:grid-cols-3 lg:max-w-4xl">
+        {footerColumns.map((column) => (
+          <div key={column.title}>
+            <h3 className="mb-3 font-display text-base uppercase">{column.title}</h3>
+            <ul className="space-y-1.5">
+              {column.links.map((link) => <li key={link}><a href={`/${slugify(link)}`} className="text-[12.8px] hover:underline">{link}</a></li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <div className="mt-10 flex flex-wrap items-end justify-between gap-6">
+        <div>
+          <Logo inverted />
+          <p className="mt-3 text-sm">United Arab Emirates</p>
+        </div>
+        <ul className="flex gap-3">
+          {socials.map(({ label, short }) => (
+            <li key={label}><a href="#" aria-label={label} className="grid size-8 place-items-center rounded-full border border-white/40 text-xs hover:bg-white hover:text-black">{short}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div className="mt-6 flex flex-wrap justify-between gap-4 border-t border-white pt-4 text-xs">
+        <p>Copyright © Garmin storefront demo</p>
+        <ul className="flex flex-wrap gap-6">
+          {legalLinks.map((link) => <li key={link}><a href={`/${slugify(link)}`} className="hover:underline">{link}</a></li>)}
+        </ul>
+      </div>
+    </footer>
+  )
+}
