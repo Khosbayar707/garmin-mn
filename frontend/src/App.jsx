@@ -19,7 +19,7 @@ function App() {
   const productId = location.pathname.split('/').filter(Boolean).pop()
   const detail = productId && productId !== 'index.html' ? productId : null
   const productPage = products.find((product) => product.id === detail)
-  const galleryImages = ['cf-lg.jpg', 'rf-lg.jpg', 'lf-lg.jpg', 'pd-01-lg.jpg', 'pd-02-lg.jpg', 'pd-03-lg.jpg'].map((img) => productPage.productImageBase + img)
+  const galleryImages = ['cf-xl', 'rf-xl', 'lf-xl', 'pd-01-xl', 'pd-02-xl', 'pd-03-xl'].map((img) => `https://res.garmin.com/transform/image/upload/b_rgb:FFFFFF,c_pad,dpr_1.0,f_auto,h_800,q_auto,w_800/c_pad,h_800,w_800/Product_Images/en/products/${productPage.imageSku || productPage.sku}/v/${img}`)
   const slides = [
     { title: 'ENDURO™ 4', copy: 'Ultraperformance GPS smartwatch with extreme battery life', hero: 'https://res.garmin.com/homepage/88360/en_US/88360-D.jpg', watch: 'https://res.garmin.com/homepage/88360/en_US/88360-T.jpg' },
     { title: 'FĒNIX® 9', copy: 'Play harder with the ultimate smartwatch.', hero: 'https://res.garmin.com/homepage/87582/87582-1-D.jpg', watch: 'https://res.garmin.com/homepage/87582/87582-3-M.jpg' },
